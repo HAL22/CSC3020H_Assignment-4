@@ -7,30 +7,32 @@ public class PlayerMovement : MonoBehaviour
 
 
     public float speed = 10f;
-
     private Transform player;
+    Vector2 mouseLook;
+    Vector2 smooth;
+    public float sen = 4.4f;
+    public float sm = 3.2f;
 
 
     void Start ()
     {
-
         player = GetComponent<Transform>();
-
 
 	}
 
     void rotate()
     {
 
-        
+        Vector2 mouseVec = new Vector2(Input.GetAxisRaw("Mouse X"),Input.GetAxisRaw("Mouse Y"));
 
+        mouseVec = Vector2.Scale(mouseVec, new Vector2(sen * sm, sen * sm));
 
-           Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        smooth.x = Mathf.Lerp(smooth.x, mouseVec.x, 1F / sm);
+        smooth.y = Mathf.Lerp(smooth.y, mouseVec.y, 1F / sm);
 
-           float midpoint = (transform.position - Camera.main.transform.position).magnitude*0.5f;
+        mouseLook += smooth;
 
-           transform.LookAt(mouseRay.origin + mouseRay.direction * midpoint);
-
+        transform.localRotation = Quaternion.AngleAxis(mouseLook.x, transform.up);
 
     }
 
