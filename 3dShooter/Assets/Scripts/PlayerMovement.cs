@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     void movement()
     {
 
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 	void Update ()
     {
 
+       
         movement();
 
        

@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour {
     public float radx=0;
     public float rady=0;
     public float radz=0;
-    public bool rot = true;
+    public  bool rot = true;
    
 
     // Private variables
@@ -27,23 +27,28 @@ public class CameraController : MonoBehaviour {
 	void LateUpdate ()
     {
 
-
-
-
-        
-
         // making sure the camera looks at the player object
 
         transform.LookAt(player.transform);
 
-        if (Input.GetKeyDown(KeyCode.O))
+
+        if (rot == false)
+        {
+
+            transform.position = player.transform.position + offset;
+
+        }
+
+       
+
+        if (rot)
         {
 
             transform.RotateAround(player.transform.position, Vector3.up, Time.deltaTime * 100);
 
         }
 
-       // transform.position = player.transform.position + offset;
+      
 
 
         
