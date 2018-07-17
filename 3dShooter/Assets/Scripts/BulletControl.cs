@@ -11,7 +11,7 @@ public class BulletControl : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        bulletstrength = 15.5f;
+        bulletstrength = 90.5f;
 		
 	}
 	
@@ -29,7 +29,7 @@ public class BulletControl : MonoBehaviour {
             rigTemp.AddForce(transform.forward * bulletstrength);
 
             //Basic Clean Up, set the Bullets to self destruct after 10 Seconds, I am being VERY generous here, normally 3 seconds is plenty.
-            Destroy(tempholder, 10.0f);
+            Destroy(tempholder, 3.0f);
         }
 
 		
