@@ -4,21 +4,64 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-
+    [SerializeField]
+    Camera firstperson;
+    [SerializeField]
+    Camera ThirdAndOrbit;
+    private bool firstP;
+    private bool thirdP;
     public float speed = 10f;
     private Transform player;
     Vector2 mouseLook;
     Vector2 smooth;
     public float sen = 4.4f;
     public float sm = 3.2f;
-
+    
+    
 
     void Start ()
     {
         player = GetComponent<Transform>();
+        firstP = false;
+        thirdP = true;
+
+        firstperson.GetComponent<Camera>().enabled = false;
+        ThirdAndOrbit.GetComponent<Camera>().enabled = true;
+
+        
 
 	}
+
+    void changeCam()
+    {
+        if (Input.GetKey(KeyCode.F))
+        {
+            firstP = true;
+            thirdP = false;
+        }
+
+        if (Input.GetKey(KeyCode.O))
+        {
+            firstP = false;
+            thirdP = true;
+        }
+
+        if (firstP)
+        {
+
+            firstperson.GetComponent<Camera>().enabled = true;
+            ThirdAndOrbit.GetComponent<Camera>().enabled = false;
+        }
+
+        if (thirdP)
+        {
+            firstperson.GetComponent<Camera>().enabled = false;
+            ThirdAndOrbit.GetComponent<Camera>().enabled = true;
+
+        }
+    }
+
+   
 
     void rotate()
     {
@@ -55,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
 
        
         movement();
+
+        changeCam();
 
        
 

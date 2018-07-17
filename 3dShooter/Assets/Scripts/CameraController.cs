@@ -7,9 +7,8 @@ public class CameraController : MonoBehaviour {
 
     // Public variables
     public GameObject player;
-    public float radx=0;
-    public float rady=0;
-    public float radz=0;
+    public float height;
+    public float length;
     public  bool rot = true;
    
 
@@ -32,7 +31,7 @@ public class CameraController : MonoBehaviour {
         transform.LookAt(player.transform);
 
 
-        if (rot == false)
+        if (!rot)
         {
 
             transform.position = player.transform.position + offset;
