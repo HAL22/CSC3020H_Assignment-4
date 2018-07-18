@@ -12,6 +12,8 @@ public class BulletControl : MonoBehaviour {
 
     public GameObject hiteffect;
 
+    public GameObject groundhit;
+
     public ParticleSystem muzzleflash;
 
 	// Use this for initialization
@@ -35,10 +37,29 @@ public class BulletControl : MonoBehaviour {
 
             if (t != null)
             {
+                GameObject hObject = Instantiate(hiteffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+
                 t.damage(damage);
+
+                Destroy(hObject, 2f);
             }
 
-            Instantiate(hiteffect, hit.point, Quaternion.LookRotation(hit.normal));
+            else
+            {
+                GameObject gObject = Instantiate(groundhit, hit.point, Quaternion.LookRotation(hit.normal));
+
+                Destroy(gObject, 2f);
+
+            }
+
+            
+
+
+
+
+
+
 
         }
     }
