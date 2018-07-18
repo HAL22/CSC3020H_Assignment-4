@@ -4,32 +4,52 @@ using UnityEngine;
 
 public class BulletControl : MonoBehaviour {
 
-    public GameObject target;
-    public GameObject bullet;
-    public float bulletstrength;
+    public float damage = 10.0f;
+
+    public float range = 100.0f;
+
+    public Camera fpsCamera;
+
+    public GameObject hiteffect;
+
+    public ParticleSystem muzzleflash;
 
 	// Use this for initialization
 	void Start ()
     {
-        bulletstrength = 90.5f;
+   
 		
 	}
+
+    void shoot()
+    {
+        muzzleflash.Play();
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(fpsCamera.transform.position,fpsCamera.transform.forward,out hit,range))
+        {
+            Debug.Log(hit.transform.name);
+
+            target t = hit.transform.GetComponent<target>();
+
+            if (t != null)
+            {
+                t.damage(damage);
+            }
+
+            Instantiate(hiteffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            GameObject tempholder;
-
-            tempholder = Instantiate(bullet, target.transform.position, target.transform.rotation) as GameObject;
-
-            Rigidbody rigTemp = tempholder.GetComponent<Rigidbody>();
-
-            rigTemp.AddForce(transform.forward * bulletstrength);
-
-            //Basic Clean Up, set the Bullets to self destruct after 10 Seconds, I am being VERY generous here, normally 3 seconds is plenty.
-            Destroy(tempholder, 3.0f);
+            shoot();
+           
         }
 
 		
