@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class target : MonoBehaviour {
 
-    public float health=10;
+    public float health=50f;
+    public Material mat;
+    public Renderer rend;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+       // mat = GetComponent<Material>();
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
+        rend.sharedMaterial = mat;
 		
 	}
+
+    public void changeMaterial(Material m)
+    {
+        rend.sharedMaterial = m;
+    }
+
+
 
     public void damage(float amount)
     {
@@ -27,7 +41,8 @@ public class target : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 }
