@@ -49,15 +49,17 @@ public class Spawner : MonoBehaviour
 
             target t = holderShape.transform.GetComponent<target>();
 
+           
+
             
 
             if (t != null)
             {
-                Debug.Log("Here");
+               
                 t.changeMaterial(material[CurrentMaterial]);
 
                 Instantiate(holderShape,CurrentspawnPosition+transform.TransformPoint(0,0,0),gameObject.transform.rotation);
-            }
+           }
 
             yield return new WaitForSeconds(spawnRate);
 

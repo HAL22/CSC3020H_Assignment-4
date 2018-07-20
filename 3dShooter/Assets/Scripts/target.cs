@@ -5,22 +5,22 @@ using UnityEngine;
 public class target : MonoBehaviour {
 
     public float health=50f;
-    public Material mat;
-    public Renderer rend;
+  
+  
 
 	// Use this for initialization
 	void Start ()
     {
-       // mat = GetComponent<Material>();
-        rend = GetComponent<Renderer>();
-        rend.enabled = true;
-        rend.sharedMaterial = mat;
+       //s mat = GetComponent<Material>();
+
+       
+
 		
 	}
 
     public void changeMaterial(Material m)
     {
-        rend.sharedMaterial = m;
+        GetComponent<Renderer>().material  = m;
     }
 
 

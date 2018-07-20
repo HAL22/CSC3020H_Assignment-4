@@ -493,7 +493,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ad05948e40744074d80566dd0434b952, type: 2}
   - {fileID: 2100000, guid: 1f797592531a56247ab646654b5b99c8, type: 2}
   - {fileID: 2100000, guid: 6a04d2df3156e7d4abd41c988a0b5e64, type: 2}
-  randomPosition: {x: 1, y: 0, z: 1}
+  randomPosition: {x: 4, y: 0, z: 3}
   spawnRate: 1
   startwait: 1
   stopSpawn: 0
