@@ -16,9 +16,15 @@ public class BulletControl : MonoBehaviour {
 
     public ParticleSystem muzzleflash;
 
+    public AudioClip clip;
+
+    public AudioSource source;
+
 	// Use this for initialization
 	void Start ()
     {
+
+        source.clip = clip;
    
 		
 	}
@@ -37,7 +43,11 @@ public class BulletControl : MonoBehaviour {
 
             if (t != null)
             {
+                source.Play();
+
                 GameObject hObject = Instantiate(hiteffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+                
 
 
                 t.damage(damage);
@@ -47,7 +57,12 @@ public class BulletControl : MonoBehaviour {
 
             else
             {
+
+                source.Play();
+
                 GameObject gObject = Instantiate(groundhit, hit.point, Quaternion.LookRotation(hit.normal));
+
+                
 
                 Destroy(gObject, 2f);
 

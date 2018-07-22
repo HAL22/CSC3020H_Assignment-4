@@ -7,18 +7,25 @@ public class target : MonoBehaviour {
     public float health=50f;
     public GameObject explosion;
     private Transform loc;
-  
-  
 
-	// Use this for initialization
-	void Start ()
+    public AudioClip clip;
+
+    public AudioSource source;
+
+
+
+
+
+    // Use this for initialization
+    void Start ()
     {
-       //s mat = GetComponent<Material>();
+        source.clip = clip;
+        //s mat = GetComponent<Material>();
 
-       
 
-		
-	}
+
+
+    }
 
     public void changeMaterial(Material m)
     {
@@ -42,6 +49,7 @@ public class target : MonoBehaviour {
     {
         GameObject exe= Instantiate(explosion,transform.position,Quaternion.identity);
 
+        source.Play();
         
         Destroy(gameObject);
 
