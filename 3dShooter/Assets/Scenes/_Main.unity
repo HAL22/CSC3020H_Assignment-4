@@ -426,8 +426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  mat: {fileID: 2100000, guid: 525abc07ba23209449ba61968d2322f2, type: 2}
-  rend: {fileID: 0}
 --- !u!4 &868998738 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4631892415058550, guid: c71e01a9c69be2b4fbb46c89b90be611,
@@ -466,7 +464,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1336311888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.886, y: 0, z: 1.9}
+  m_LocalPosition: {x: 2.56, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162539635}

@@ -125,8 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  mat: {fileID: 2100000, guid: d8e3019732f9387408b5021ced3c77c6, type: 2}
-  rend: {fileID: 0}
 --- !u!135 &135945723906931554
 SphereCollider:
   m_ObjectHideFlags: 1
