@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620662634480238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.31036, y: 1, z: 14.38676}
+  m_LocalPosition: {x: 3.4958696, y: 1, z: 7.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   explosion: {fileID: 1871740338532552, guid: 4a62ba15696608441a4b3c5548684e29, type: 2}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 4acbba20d638a9c49b117f9661f330ea, type: 3}
   source: {fileID: 82796414688325906}
 --- !u!136 &136805579706737220
 CapsuleCollider:

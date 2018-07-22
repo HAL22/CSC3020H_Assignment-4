@@ -10,7 +10,7 @@ public class target : MonoBehaviour {
 
     public AudioClip clip;
 
-    public AudioSource source;
+   // public AudioSource source;
 
 
 
@@ -19,7 +19,7 @@ public class target : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        source.clip = clip;
+      //  source.clip = clip;
         //s mat = GetComponent<Material>();
 
 
@@ -47,9 +47,11 @@ public class target : MonoBehaviour {
 
     void die()
     {
+        AudioSource source = GetComponent<AudioSource>();
+     //   source.clip = clip;
         GameObject exe= Instantiate(explosion,transform.position,Quaternion.identity);
 
-        source.Play();
+        source.PlayOneShot(clip);
         
         Destroy(gameObject);
 

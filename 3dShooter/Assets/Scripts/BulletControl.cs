@@ -18,19 +18,25 @@ public class BulletControl : MonoBehaviour {
 
     public AudioClip clip;
 
-    public AudioSource source;
+    //public AudioSource source;
 
 	// Use this for initialization
 	void Start ()
     {
 
-        source.clip = clip;
+       // source.clip = clip;
    
 		
 	}
 
     void shoot()
     {
+
+         AudioSource source = GetComponent<AudioSource>();
+
+      //  source.clip = clip;
+
+
         muzzleflash.Play();
 
         RaycastHit hit;
@@ -43,7 +49,7 @@ public class BulletControl : MonoBehaviour {
 
             if (t != null)
             {
-                source.Play();
+                source.PlayOneShot(clip);
 
                 GameObject hObject = Instantiate(hiteffect, hit.point, Quaternion.LookRotation(hit.normal));
 
@@ -58,7 +64,7 @@ public class BulletControl : MonoBehaviour {
             else
             {
 
-                source.Play();
+                source.Play(1);
 
                 GameObject gObject = Instantiate(groundhit, hit.point, Quaternion.LookRotation(hit.normal));
 
