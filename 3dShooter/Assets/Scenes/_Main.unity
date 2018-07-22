@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  explosion: {fileID: 0}
 --- !u!4 &868998738 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4631892415058550, guid: c71e01a9c69be2b4fbb46c89b90be611,

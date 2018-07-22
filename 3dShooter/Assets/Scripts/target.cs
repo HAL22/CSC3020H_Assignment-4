@@ -5,6 +5,8 @@ using UnityEngine;
 public class target : MonoBehaviour {
 
     public float health=50f;
+    public GameObject explosion;
+    private Transform loc;
   
   
 
@@ -21,6 +23,7 @@ public class target : MonoBehaviour {
     public void changeMaterial(Material m)
     {
         GetComponent<Renderer>().material  = m;
+        loc = GetComponent<Transform>();
     }
 
 
@@ -37,7 +40,12 @@ public class target : MonoBehaviour {
 
     void die()
     {
+        GameObject exe= Instantiate(explosion,transform.position,Quaternion.identity);
+
+        
         Destroy(gameObject);
+
+        Destroy(exe, 2f);
     }
 	
 	// Update is called once per frame
