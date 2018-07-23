@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         firstperson.GetComponent<Camera>().enabled = false;
         ThirdAndOrbit.GetComponent<Camera>().enabled = true;
+       
 
         
 
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
             firstperson.GetComponent<Camera>().enabled = true;
             ThirdAndOrbit.GetComponent<Camera>().enabled = false;
+
         }
 
         if (thirdP)
