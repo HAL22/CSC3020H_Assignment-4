@@ -34,7 +34,7 @@ public class BulletControl : MonoBehaviour {
 
          AudioSource source = GetComponent<AudioSource>();
 
-      //  source.clip = clip;
+        source.clip = clip;
 
 
         muzzleflash.Play();
@@ -49,7 +49,9 @@ public class BulletControl : MonoBehaviour {
 
             if (t != null)
             {
-                source.PlayOneShot(clip);
+                source.Play();
+
+              //  source.Stop();
 
                 GameObject hObject = Instantiate(hiteffect, hit.point, Quaternion.LookRotation(hit.normal));
 
@@ -64,7 +66,9 @@ public class BulletControl : MonoBehaviour {
             else
             {
 
-                source.Play(1);
+                source.Play();
+
+              //  source.Stop();
 
                 GameObject gObject = Instantiate(groundhit, hit.point, Quaternion.LookRotation(hit.normal));
 

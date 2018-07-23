@@ -60,7 +60,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ad05948e40744074d80566dd0434b952, type: 2}
+  - {fileID: 2100000, guid: 1f797592531a56247ab646654b5b99c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -208,7 +208,6 @@ MonoBehaviour:
   health: 50
   explosion: {fileID: 1871740338532552, guid: 4a62ba15696608441a4b3c5548684e29, type: 2}
   clip: {fileID: 8300000, guid: 4acbba20d638a9c49b117f9661f330ea, type: 3}
-  source: {fileID: 82796414688325906}
 --- !u!136 &136805579706737220
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start ()
     {
+        speed = 20f;
         player = GetComponent<Transform>();
         firstP = false;
         thirdP = true;

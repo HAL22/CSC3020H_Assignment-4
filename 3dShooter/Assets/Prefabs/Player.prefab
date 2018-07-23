@@ -390,7 +390,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -453,7 +453,7 @@ MonoBehaviour:
   hiteffect: {fileID: 1477453947505476, guid: abe2a2a58254308459da02f86bc2dd09, type: 2}
   groundhit: {fileID: 1623138682412156, guid: efbd9457c0f726b46beef5e5ddc9d169, type: 2}
   muzzleflash: {fileID: 198973594400407240}
-  clip: {fileID: 8300000, guid: 6143c79a811b9574e91f2be3c5a8b69d, type: 3}
+  clip: {fileID: 8300000, guid: c896fa26240b5734a8927a1cced88e35, type: 3}
 --- !u!124 &124524517487530576
 Behaviour:
   m_ObjectHideFlags: 1
